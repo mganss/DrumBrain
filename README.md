@@ -41,3 +41,7 @@ If the <kbd>Continue</kbd> toggle is activated, DrumGen will read MIDI notes fro
 ## Context
 
 When a step is generated, the previous steps that are used to look up the possible next steps from the continuations dictionary are called the context. The maximum number of steps in the context can be selected within a range of 1 to 32. Lower numbers will result in more random output.
+
+## Contribute
+
+Contributions are welcome, in particular more existing 808/909 patterns in any machine readable format to improve the model.
