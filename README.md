@@ -6,6 +6,8 @@ A Max for Live 808/909-style drum pattern generator and sequencer based on a [Le
 
 [Demo on YouTube](https://youtu.be/8KpjvNGndvg)
 
+Download under [releases](https://github.com/mganss/DrumGen/releases) or at [maxforlive.com](http://maxforlive.com/library/device/5462/drumgen)
+
 ## Features
 
 * Generate patterns specific to 11 different instruments
