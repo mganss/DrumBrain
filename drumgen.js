@@ -32,6 +32,7 @@ function generateAll() {
     for (var i = 0; i < numInstruments; i++) {
         generate(i, false);
     }
+    clipOut();
 }
 
 function generate(i, dumpStorage) {
@@ -71,6 +72,9 @@ function generate(i, dumpStorage) {
     }
 
     outlet(0, i, "pitch", 1, pattern);
+
+    if (dumpStorage === undefined || dumpStorage)
+        clipOut();
 }
 
 var storage = {};
@@ -257,4 +261,63 @@ function getTextFromMidi(notes, clipLength) {
     }
 
     return texts;
+}
+
+var clips = {
+    out: null
+};
+var ids = {
+    out: 0
+};
+var init = false;
+
+function liveInit() {
+    init = true;
+    if (ids.out !== 0) {
+        setOut(ids.out);
+    }
+}
+
+function setClip(name, id) {
+    if (!init) {
+        ids[name] = id;
+        return;
+    }
+    if (id === 0) {
+        clips[name] = null;
+        return;
+    }
+    var clipId = "id " + id;
+    clips[name] = new LiveAPI(clipId);
+}
+
+function setOut(id) {
+    setClip("out", id);
+    clipOut();
+}
+
+function clipOut() {
+    if (clips.out !== null) {
+        var outClip = clips.out;
+        var stepNotes = generateMidi();
+        if (stepNotes === undefined) stepNotes = [];
+        replaceAllNotes(outClip, stepNotes);
+    }
+}
+
+function replaceAllNotes(clip, notes) {
+    clip.call("select_all_notes");
+    clip.call("replace_selected_notes");
+    clip.call("notes", notes.length);
+
+    for (var i = 0; i < notes.length; i++) {
+        var note = notes[i];
+        callNote(clip, note);
+    }
+
+    clip.call("done");
+}
+
+function callNote(clip, note) {
+    clip.call("note", note.Pitch, note.Start.toFixed(4), note.Duration.toFixed(4), note.Velocity, note.Muted);
 }
