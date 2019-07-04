@@ -21,6 +21,7 @@ Download under [releases](https://github.com/mganss/DrumGen/releases) or at [max
 * Select "House", "Breaks", or "All" style patterns (see below)
 * 909-like flam (configurable amount)
 * Presets
+* Out clip (see below)
 
 ## Total accent
 
@@ -37,6 +38,11 @@ You can select between "House", "Breaks", or "All" style patterns. If you choose
 ## Create clip
 
 If you click <kbd>Clip</kbd> a new clip with the current pattern is generated in the first empty clip slot of the current track. You might notice subtle timing differences when comparing recorded MIDI vs. created MIDI clips. This is a limitation of Max for Live.
+
+## Out clip
+
+Create an empty clip, select it, then click <kbd>Out</kbd> to permanently set this clip as DrumGen's output clip. 
+Whenever the pattern changes, this clip will be updated.
 
 ## Continue
 
