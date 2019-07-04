@@ -148,9 +148,13 @@ function setNotes(clip, notes) {
     clip.call("done");
 }
 
+var callingPresetStorageDump = false;
+
 function callPresetStorageDump() {
     var presetStorage = this.patcher.getnamed("presetStorage");
+    callingPresetStorageDump = true;
     presetStorage.message("dump");
+    callingPresetStorageDump = false;
 }
 
 var instruments = ["bd", "sd", "lt", "mt", "ht", "rs", "cp", "cb", "cy", "oh", "ch"];
@@ -199,8 +203,12 @@ function generateMidi() {
 }
 
 function dumpPreset(path) {
-    var args = Array.prototype.slice.call(arguments).slice(1);
-    storage[path] = args.length > 1 ? args : args[0];
+    if (!callingPresetStorageDump) {
+        clipOut();
+    } else {
+        var args = Array.prototype.slice.call(arguments).slice(1);
+        storage[path] = args.length > 1 ? args : args[0];
+    }
 }
 
 function getClipNotes(clip) {
