@@ -41,12 +41,12 @@ If you click <kbd>Clip</kbd> a new clip with the current pattern is generated in
 
 ## Out clip
 
-Create an empty clip, select it, then click <kbd>Out</kbd> to permanently set this clip as DrumGen's output clip. 
+Create an empty clip, select it, then click <kbd>Out</kbd> to permanently set this clip as DrumBrain's output clip. 
 Whenever the pattern changes, this clip will be updated.
 
 ## Continue
 
-If the <kbd>Continue</kbd> toggle is activated, DrumGen will read MIDI notes from the first non-empty clip slot of the current track and continue the pattern. Notes are internally quantized to 16th notes (duration is irrelevant). Velocities that are equal to or higher than the selected high velocity are considered high, all others low. If more than one hit occurs in a 16th note interval, the step is considered a flam. If a clip is longer than two bars, only the last 32 steps are considered.
+If the <kbd>Continue</kbd> toggle is activated, DrumBrain will read MIDI notes from the first non-empty clip slot of the current track and continue the pattern. Notes are internally quantized to 16th notes (duration is irrelevant). Velocities that are equal to or higher than the selected high velocity are considered high, all others low. If more than one hit occurs in a 16th note interval, the step is considered a flam. If a clip is longer than two bars, only the last 32 steps are considered.
 
 ## Context
 
