@@ -1,4 +1,4 @@
-# DrumGen
+# DrumBrain
 
 ![DrumGen Screenshot](https://github.com/mganss/DrumGen/raw/master/screenshot.png)
 
