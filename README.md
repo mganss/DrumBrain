@@ -1,12 +1,12 @@
 # DrumBrain
 
-![DrumGen Screenshot](https://github.com/mganss/DrumGen/raw/master/screenshot.png)
+![DrumBrain Screenshot](https://github.com/mganss/DrumBrain/raw/master/screenshot.png)
 
 A Max for Live 808/909-style drum pattern generator and sequencer based on a [Lempel-Ziv](https://en.wikipedia.org/wiki/LZ77_and_LZ78) model. The device has a built-in model that was generated from ~250 existing drum patterns using the incremental parsing algorithm described in [Guessing the Composer's Mind: Applying Universal Prediction to Musical Style](http://articles.ircam.fr/textes/Assayag99a/index.pdf).
 
 [Demo on YouTube](https://youtu.be/8KpjvNGndvg)
 
-Download under [releases](https://github.com/mganss/DrumGen/releases) or at [maxforlive.com](http://maxforlive.com/library/device/5462/drumgen)
+Download under [releases](https://github.com/mganss/DrumBrain/releases) or at [maxforlive.com](http://maxforlive.com/library/device/5462/drumbrain)
 
 ## Features
 
